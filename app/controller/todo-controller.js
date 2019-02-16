@@ -13,9 +13,9 @@ function ($scope) {
       $scope.vm.taskName = null;
     }
   };
-  $scope.vm.removeTask=function removeTask(taskName){
-    if(taskName) {
-      $scope.vm.tasks.splice(tasks.indexOf(taskName), 1);
+  $scope.vm.removeTask = function removeTask(taskName){
+    if(taskName != null){
+      $scope.vm.tasks.splice($scope.vm.tasks.indexOf(taskName), 1);
     }
-  }
+  };
 }]);
