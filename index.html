@@ -5,15 +5,7 @@
         <script src="app/controller/todo-controller.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <style>
-        *{
-            font-family: 'Roboto';
-            font-size: 20px;
-        }
-        .text-strike {
-            text-decoration: line-through;
-        }
-        </style>
+        <link rel="stylesheet" href="app.css">
     </head>
     <body ng-controller="TasksController">
         <div class="container-fluid">
@@ -35,22 +27,12 @@
                     <ul class="list-group">
                             <li class="list-group-item" ng-repeat="task in vm.tasks">
                                 <div>
-                                    <input type="checkbox">
-                                    <label class="mb-0">{{task}}</label>
+                                    <input type="checkbox" ng-model="a" >
+                                    <label ng-if="!a" class="mb-0" >{{task}}</label>
+                                    <label ng-if="a" class="mb-0 text-muted text-strike">{{task}}</label>
                                 </div>
                             </li>
-                            <!-- <li class="list-group-item">
-                                <div>
-                                    <input type="checkbox">
-                                    <label class="mb-0">Task 1 my new task.</label>
-                                </div>
-                            </li>
-                            <li class="list-group-item text-muted">
-                                    <div>
-                                        <input type="checkbox">
-                                        <label class="mb-0 text-strike">Task 2 complete.</label>
-                                    </div>
-                                </li> -->
+              
                     </ul>
                 </div>
             </div>
