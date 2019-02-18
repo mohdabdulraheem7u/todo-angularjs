@@ -10,7 +10,7 @@ function ($scope) {
   $scope.vm.addTask = function addTask() {
     if($scope.vm.taskName) {
       $scope.vm.tasks.push($scope.vm.taskName);
-      $scope.vm.taskName = null;
+      $scope.vm.taskName;
     }
   };
   $scope.vm.removeTask = function removeTask(taskName){
