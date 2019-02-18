@@ -6,11 +6,14 @@ function ($scope) {
   $scope.vm.taskName = null;
 
   $scope.vm.tasks = [];
-
+  
   $scope.vm.addTask = function addTask() {
     if($scope.vm.taskName) {
-      $scope.vm.tasks.push($scope.vm.taskName);
-      $scope.vm.taskName;
+      var task={};
+      task.name = $scope.vm.taskName;
+      task.complete = false;
+      $scope.vm.tasks.push(task);
+      $scope.vm.taskName = null;
     }
   };
   $scope.vm.removeTask = function removeTask(taskName){
