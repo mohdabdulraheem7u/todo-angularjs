@@ -25,11 +25,23 @@
             <div class="row mt-3">
                   <div class="col-sm-4">
                       <ul class="list-group">
-                            <li class="list-group-item" ng-repeat="task in vm.tasks track by $index">
+                            <li class="list-group-item" ng-repeat="task in vm.tasks">
                                 <div>
-                                    <input type="checkbox" ng-model="task.complete" >
+                                    <!-- <input type="checkbox" ng-model="task.complete" >
                                     <label class="mb-0" ng-class = "{'text-strike text-muted': task.complete}" >{{task.name}}</label>
+                                <input type="checkbox" id="{{$index}}" checklist-model="task.complete" checklist-value="name"> -->
+                                    <input type="checkbox" id="{{$index}}" ng-model="task.complete">
+                                    <label for="{{$index}}" class = "mb-0 strike-{{task.complete}}">{{task.name}}</label>
                                     <button type="button" class="btn btn-outline-danger btn-sm float-right" ng-click="vm.removeTask(task)">X</button>
+                                    <!-- <button type="button" class="destroy" ng-click="vm.removeTask(task)">X</button> -->
+                                    <!-- <input type="checkbox" ng-model="task" 
+                                      class = "text-strike text-muted"
+                                      [ng-true-value="1"]
+                                      [ng-false-value="0"]>{{task.name}} -->
+                                      
+                                      
+                                     
+                                       
                                 </div>
                             </li>
                       </ul>

@@ -2,6 +2,11 @@
     font-family: 'Roboto';
     font-size: 20px;
 }
-.text-strike {
+.strike-true {
     text-decoration: line-through;
+    
 }
+/* .done-true {
+    text-decoration: line-through;
+    color: grey;
+  } */
